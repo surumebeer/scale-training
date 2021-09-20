@@ -1,2 +1,2 @@
-export * from "./ScaleForms";
+export * from "./ScaleForms/ScaleForms";
 export * from "./Layout";

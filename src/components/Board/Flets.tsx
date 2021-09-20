@@ -1,6 +1,3 @@
-import { css } from "@emotion/react";
-import { fletsSounds, keyNames } from "../../constraints";
-import { getFixedSoundNumber } from "../../utils/getFixedSoundNumber";
 import { FletLine } from "./FletLine";
 
 export const Flets = () => {

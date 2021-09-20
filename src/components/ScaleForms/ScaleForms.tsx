@@ -4,13 +4,6 @@ import { ScaleName, SubScaleName } from "../../constraints/types";
 import { useScaleStateContext } from "../../context";
 import { SelectForm } from "./SelectForm";
 
-type Props = {
-  scale: ScaleName;
-  subScale: SubScaleName;
-  keyName: string;
-  onFormChange: (arg1: string, arg2: string) => void;
-};
-
 export const ScaleForms = () => {
   const { scale, subScale, keyName } = useScaleStateContext();
 

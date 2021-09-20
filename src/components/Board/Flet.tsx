@@ -48,7 +48,6 @@ const fletStatus = (status: boolean) => css`
 export const Flet = ({ soundNum, positionNum }: Props) => {
   const [isCorrect, useIsCorrect] = useState(true);
   const [toggleButton, useToggleButton] = useState(false);
-
   const { sounds } = useScaleStateContext();
 
   const handleButton = () => {
