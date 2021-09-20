@@ -1,6 +1,4 @@
-import { SubScaleName } from "./types";
-
-type SubScaleNames = Record<number, SubScaleName[]>;
+import { SubScaleNames } from "./types";
 
 export const subScaleNames: SubScaleNames = {
   0: [

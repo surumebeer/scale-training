@@ -1,56 +1,30 @@
-import {
-  Box,
-  Container,
-  Typography,
-  Button,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Grid,
-  Paper,
-} from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
 
+import { Layout } from "../src/components/Layout";
 import { ScaleForms } from "../src/components/ScaleForms";
-import { useScaleForms } from "../src/hooks/useScaleForms";
-
-import { scaleNames, keyNames, subScaleNames } from "../src/constraints";
+import { Sounds } from "../src/components/Sounds";
+import { useScaleStateContext, useScaleDispatchContext } from "../src/context";
 
 import type { NextPage } from "next";
-import React from "react";
+import { useRouter } from "next/router";
 
 const Index: NextPage = () => {
-  const { scale, subScale, keyName, sounds, handleScaleFormChange } =
-    useScaleForms();
+  const { sounds } = useScaleStateContext();
+
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    router.push("/scale");
+  };
 
   return (
-    <Container maxWidth="sm">
-      <Typography variant="h3" component="h1">
-        Scale Training
-      </Typography>
-      <ScaleForms
-        scale={scale}
-        subScale={subScale}
-        keyName={keyName}
-        onFormChange={handleScaleFormChange}
-      />
-      <Box>
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          spacing={1}
-        >
-          {sounds.map((x) => (
-            <Grid key={x} item justifyContent="center" alignItems="center">
-              <p>{keyNames[x]}</p>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-      <Button variant="contained">try</Button>
-    </Container>
+    <Layout>
+      <ScaleForms />
+      <Sounds sounds={sounds} />
+      <Button variant="contained" onClick={handleButtonClick}>
+        try
+      </Button>
+    </Layout>
   );
 };
 

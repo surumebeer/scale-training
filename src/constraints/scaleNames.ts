@@ -1,6 +1,6 @@
-import { ScaleName } from "./types";
+import { ScaleNames } from "./types";
 
-export const scaleNames: ScaleName[] = [
+export const scaleNames: ScaleNames = [
   {
     id: 0,
     name: "メジャースケール",
